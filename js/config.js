@@ -1,8 +1,5 @@
 /**
- * Set this to your Render backend URL after deploy.
- * Local default talks to the API on port 3000.
- *
- * Example production:
- *   window.API_BASE = 'https://your-service.onrender.com';
+ * Backend API base URL (Render).
+ * Local override: set before this script, or change temporarily to http://localhost:3000
  */
-window.API_BASE = window.API_BASE || 'http://localhost:3000';
+window.API_BASE = 'https://automated-attendance-system-backend-dhev.onrender.com';
