@@ -22,7 +22,7 @@
   <main class="app-main teacher-layout">
     <section class="setup-panel" id="setup-panel">
       <h1>Start an attendance session</h1>
-      <p class="lede">Display this page on the classroom screen. The QR refreshes every 5 minutes with a new token.</p>
+      <p class="lede">Display this page on the classroom screen. The QR refreshes every 10 seconds with a new token.</p>
       <form id="create-form" class="inline-form">
         <label>
           <span>Session title</span>
@@ -57,9 +57,9 @@
               <path class="ring-bg" d="M18 2.5a15.5 15.5 0 1 1 0 31 15.5 15.5 0 1 1 0-31" />
               <path class="ring-fg" id="countdown-ring" d="M18 2.5a15.5 15.5 0 1 1 0 31 15.5 15.5 0 1 1 0-31" />
             </svg>
-            <span id="countdown-num">5:00</span>
+            <span id="countdown-num">0:10</span>
           </div>
-          <p>Token refreshes in <strong id="countdown-label">5:00</strong></p>
+          <p>Token refreshes in <strong id="countdown-label">0:10</strong></p>
           <p class="muted">Version <span id="token-version">0</span> · <span id="present-count">0</span> present</p>
         </div>
       </div>

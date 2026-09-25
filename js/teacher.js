@@ -24,7 +24,7 @@
   let rosterTimer = null;
   let localCountdown = null;
   let expiresAt = 0;
-  let intervalMs = 5 * 60 * 1000;
+  let intervalMs = 10_000;
   const RING_LEN = 97.4;
 
   async function loadPastSessions() {

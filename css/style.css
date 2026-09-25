@@ -314,7 +314,7 @@ input:focus {
   padding: 1rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  animation: qr-pulse 300s linear infinite;
+  animation: qr-pulse 10s linear infinite;
 }
 
 .qr-stage .form-error {
