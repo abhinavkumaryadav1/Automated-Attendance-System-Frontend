@@ -1,0 +1,8 @@
+{
+  "name": "pulsemark-frontend",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -l 5500",
+    "dev": "npx --yes serve . -l 5500"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PulseMark — QR Attendance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="page-auth">
+  <div class="auth-shell">
+    <header class="brand-block">
+      <p class="brand-name">PulseMark</p>
+      <h1 class="brand-tagline">Attendance that moves with the room.</h1>
+      <p class="brand-sub">A live QR token rotates every 5 minutes. Scan it while signed in to mark presence.</p>
+    </header>
+
+    <form id="login-form" class="auth-form" autocomplete="on">
+      <label>
+        <span>Username</span>
+        <input type="text" name="username" id="username" required placeholder="teacher or student1" />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" id="password" required placeholder="••••••••" />
+      </label>
+      <p id="login-error" class="form-error" hidden></p>
+      <button type="submit" class="btn btn-primary" id="login-btn">Sign in</button>
+    </form>
+
+    <aside class="demo-hint">
+      <p><strong>Demo accounts</strong></p>
+      <ul>
+        <li>Teacher: <code>teacher</code> / <code>teacher123</code></li>
+        <li>Students: <code>student1</code>–<code>student3</code> / <code>student123</code></li>
+      </ul>
+    </aside>
+  </div>
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

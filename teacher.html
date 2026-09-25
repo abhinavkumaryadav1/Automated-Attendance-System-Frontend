@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Host session — PulseMark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="page-app">
+  <div class="app-bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <a href="/" class="topbar-brand">PulseMark</a>
+    <div class="topbar-meta">
+      <span id="user-label"></span>
+      <button type="button" class="btn btn-ghost" id="logout-btn">Sign out</button>
+    </div>
+  </header>
+
+  <main class="app-main teacher-layout">
+    <section class="setup-panel" id="setup-panel">
+      <h1>Start an attendance session</h1>
+      <p class="lede">Display this page on the classroom screen. The QR refreshes every 5 minutes with a new token.</p>
+      <form id="create-form" class="inline-form">
+        <label>
+          <span>Session title</span>
+          <input type="text" id="session-title" maxlength="80" value="Morning lecture" required />
+        </label>
+        <button type="submit" class="btn btn-primary">Generate live QR</button>
+      </form>
+      <div id="past-sessions" class="session-list" hidden>
+        <h2>Your sessions</h2>
+        <ul id="session-list"></ul>
+      </div>
+    </section>
+
+    <section class="live-panel" id="live-panel" hidden>
+      <div class="live-header">
+        <div>
+          <p class="eyebrow">Live session</p>
+          <h1 id="live-title"></h1>
+        </div>
+        <div class="live-actions">
+          <button type="button" class="btn btn-ghost" id="view-roster-btn">Roster</button>
+          <button type="button" class="btn btn-danger" id="close-session-btn">Close session</button>
+        </div>
+      </div>
+
+      <div class="qr-stage">
+        <img id="qr-image" width="320" height="320" alt="Attendance QR code" />
+        <p id="qr-error" class="form-error" hidden></p>
+        <div class="token-meta">
+          <div class="countdown-ring" id="countdown-wrap">
+            <svg viewBox="0 0 36 36" aria-hidden="true">
+              <path class="ring-bg" d="M18 2.5a15.5 15.5 0 1 1 0 31 15.5 15.5 0 1 1 0-31" />
+              <path class="ring-fg" id="countdown-ring" d="M18 2.5a15.5 15.5 0 1 1 0 31 15.5 15.5 0 1 1 0-31" />
+            </svg>
+            <span id="countdown-num">5:00</span>
+          </div>
+          <p>Token refreshes in <strong id="countdown-label">5:00</strong></p>
+          <p class="muted">Version <span id="token-version">0</span> · <span id="present-count">0</span> present</p>
+        </div>
+      </div>
+
+      <aside class="roster-side" id="roster-side" hidden>
+        <h2>Marked present</h2>
+        <ul id="roster-list"></ul>
+        <p id="roster-empty" class="muted">Waiting for scans…</p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/teacher.js"></script>
+</body>
+</html>

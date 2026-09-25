@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scan attendance — PulseMark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body class="page-app">
+  <div class="app-bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <a href="/" class="topbar-brand">PulseMark</a>
+    <div class="topbar-meta">
+      <span id="user-label"></span>
+      <button type="button" class="btn btn-ghost" id="logout-btn">Sign out</button>
+    </div>
+  </header>
+
+  <main class="app-main student-layout">
+    <section class="scan-intro" id="scan-intro">
+      <h1>Mark your attendance</h1>
+      <p class="lede">Point your camera at the classroom QR. Your login must match a valid token for this moment.</p>
+      <button type="button" class="btn btn-primary" id="start-scan-btn">Open camera</button>
+      <p class="muted camera-note">Camera access is required. Use HTTPS or localhost.</p>
+    </section>
+
+    <section class="scanner-panel" id="scanner-panel" hidden>
+      <div id="reader" class="reader"></div>
+      <button type="button" class="btn btn-ghost" id="stop-scan-btn">Stop camera</button>
+    </section>
+
+    <section class="result-panel" id="result-panel" hidden>
+      <div id="result-card" class="result-card">
+        <p class="eyebrow" id="result-eyebrow">Result</p>
+        <h2 id="result-title"></h2>
+        <p id="result-message"></p>
+        <button type="button" class="btn btn-primary" id="scan-again-btn">Scan again</button>
+      </div>
+    </section>
+
+    <section class="active-sessions" id="active-sessions">
+      <h2>Open sessions</h2>
+      <ul id="open-session-list"></ul>
+      <p id="no-sessions" class="muted" hidden>No live sessions right now.</p>
+    </section>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/student.js"></script>
+</body>
+</html>
